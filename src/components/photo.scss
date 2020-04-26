@@ -1,0 +1,16 @@
+.modal-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.item-photo{
+    background-color: #c1c1c1;
+    margin: 5px!important;
+
+    &:hover{
+        cursor: pointer;
+    }
+
+}
