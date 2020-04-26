@@ -33,7 +33,7 @@ export const Photo = ({photo}) => {
                 className="modal-body"
                 open={open}
                 onClose={handleClose}
-                alignItems="center"
+                align="center"
                 justify="center"
             >
                 <div>
