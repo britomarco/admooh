@@ -5,7 +5,7 @@ import { fetchAlbums } from '../actions/AlbumsActions'
 
 import { Album } from '../components/Album'
 
-const PostsPage = ({ dispatch, loading, posts, hasErrors }) => {
+const AlbumsPage = ({ dispatch, loading, albums, hasErrors }) => {
   useEffect(() => {
     dispatch(fetchAlbums())
   }, [dispatch])
@@ -14,7 +14,7 @@ const PostsPage = ({ dispatch, loading, posts, hasErrors }) => {
     if (loading) return <p>Loading posts...</p>
     if (hasErrors) return <p>Unable to display posts.</p>
 
-    return posts.map(post => <Album key={post.id} post={post} excerpt />)
+    return albums.map(album => <Album key={album.id} album={album} excerpt />)
   }
 
   return (
@@ -27,8 +27,8 @@ const PostsPage = ({ dispatch, loading, posts, hasErrors }) => {
 
 const mapStateToProps = state => ({
   loading: state.posts.loading,
-  posts: state.posts.posts,
+  albums: state.posts.posts,
   hasErrors: state.posts.hasErrors,
 })
 
-export default connect(mapStateToProps)(PostsPage)
+export default connect(mapStateToProps)(AlbumsPage)
