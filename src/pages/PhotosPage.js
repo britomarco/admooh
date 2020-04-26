@@ -1,28 +1,28 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import { fetchPost } from '../actions/PhotosActions'
+import { fetchPhoto } from '../actions/PhotosActions'
 
 // import { Album } from '../components/Album'
 
 const PhotosPage = ({
   match,
   dispatch,
-  post,
+  photo,
   hasErrors,
   loading,
 }) => {
   useEffect(() => {
     const { id } = match.params
 
-    dispatch(fetchPost(id))
+    dispatch(fetchPhoto(id))
   }, [dispatch, match])
 
   const renderAlbum = () => {
-    if (loading.post) return <p>Loading Photos...</p>
-    if (hasErrors.post) return <p>Unable to display photo.</p>
+    if (loading.photo) return <p>Loading Photos...</p>
+    if (hasErrors.photo) return <p>Unable to display photo.</p>
     
-  return post.map(item => <p key={item.id}>{item.title}</p>)
+  return photo.map(item => <p key={item.id}>{item.title}</p>)
   }
 
 
@@ -36,9 +36,9 @@ const PhotosPage = ({
 const mapStateToProps = state => ({
 
 
-  post: state.post.post,
-  loading: { post: state.post.loading},
-  hasErrors: { post: state.post.hasErrors },
+  photo: state.photo.photo,
+  loading: { photo: state.photo.loading},
+  hasErrors: { photo: state.photo.hasErrors },
 
   
 })

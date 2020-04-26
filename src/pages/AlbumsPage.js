@@ -10,17 +10,17 @@ const AlbumsPage = ({ dispatch, loading, albums, hasErrors }) => {
     dispatch(fetchAlbums())
   }, [dispatch])
 
-  const renderPosts = () => {
-    if (loading) return <p>Loading posts...</p>
-    if (hasErrors) return <p>Unable to display posts.</p>
+  const renderAlbums = () => {
+    if (loading) return <p>Loading albums...</p>
+    if (hasErrors) return <p>Unable to display albums.</p>
 
     return albums.map(album => <Album key={album.id} album={album} excerpt />)
   }
 
   return (
     <section>
-      <h1>Posts</h1>
-      {renderPosts()}
+      <h1>Albums</h1>
+      {renderAlbums()}
     </section>
   )
 }

@@ -3,16 +3,16 @@ import * as actions from '../actions/PhotosActions'
 export const initialState = {
   loading: true,
   hasErrors: false,
-  post: {},
+  photo: {},
 }
 
-export default function postReducer(state = initialState, action) {
+export default function photoReducer(state = initialState, action) {
   switch (action.type) {
-    case actions.GET_POST:
+    case actions.GET_PHOTO:
       return { ...state, loading: true }
-    case actions.GET_POST_SUCCESS:
-      return { post: action.payload, loading: false, hasErrors: false }
-    case actions.GET_POST_FAILURE:
+    case actions.GET_PHOTO_SUCCESS:
+      return { photo: action.payload, loading: false, hasErrors: false }
+    case actions.GET_PHOTO_FAILURE:
       return { ...state, loading: false, hasErrors: true }
     default:
       return state

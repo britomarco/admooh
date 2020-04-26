@@ -1,31 +1,30 @@
 import API_URL from '../config/index'
 
+export const GET_PHOTO = 'GET PHOTO'
+export const GET_PHOTO_SUCCESS = 'GET_PHOTO_SUCCESS'
+export const GET_PHOTO_FAILURE = 'GET_PHOTO_FAILURE'
 
-export const GET_POST = 'GET POSTS'
-export const GET_POST_SUCCESS = 'GET_POST_SUCCESS'
-export const GET_POST_FAILURE = 'GET_POST_FAILURE'
-
-export const getPost = () => ({ type: GET_POST })
-export const getPostSuccess = post => ({
-  type: GET_POST_SUCCESS,
-  payload: post,
+export const getPhoto = () => ({ type: GET_PHOTO })
+export const getPhotoSuccess = photo => ({
+  type: GET_PHOTO_SUCCESS,
+  payload: photo,
 })
 
-export const getPostFailure = () => ({ type: GET_POST_FAILURE })
+export const getPhotoFailure = () => ({ type: GET_PHOTO_FAILURE })
 
-export function fetchPost(id) {
+export function fetchPhoto(id) {
 
   return async dispatch => {
-    dispatch(getPost())
+    dispatch(getPhoto())
 
     try {
       const response = await fetch(
         `${API_URL}/albums/${id}/photos`
       )
       const data = await response.json()
-      dispatch(getPostSuccess(data))
+      dispatch(getPhotoSuccess(data))
     } catch (error) {
-      dispatch(getPostFailure())
+      dispatch(getPhotoFailure())
     }
   }
 }

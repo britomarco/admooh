@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 
 import albumsReducer from './albumsReducer'
-import albumReducer from './albumReducer'
+import photoReducer from './photosReducer'
 
 const rootReducer = combineReducers({
   albums: albumsReducer,
-  post: albumReducer,
+  photo: photoReducer,
 })
 
 export default rootReducer
