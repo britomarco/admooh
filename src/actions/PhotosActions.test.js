@@ -11,4 +11,23 @@ describe('actions', () => {
     expect(actions.getPhotoSuccess(photo)).toEqual(expectedAction)
   })
 
+  it('should return type action GET_PHOTO', ()=> {
+
+    let GET_PHOTO = {
+      type: 'GET PHOTO'
+    }
+
+    expect(actions.getPhoto()).toEqual(GET_PHOTO)
+  })
+
+  it('should return type action GET_PHOTO_FAILURE', ()=> {
+
+    let GET_PHOTO_FAILURE = {
+      type: 'GET_PHOTO_FAILURE'
+    }
+
+    expect(actions.getPhotoFailure()).toEqual(GET_PHOTO_FAILURE)
+  })
+
+
 })
