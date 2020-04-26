@@ -1,16 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Grid from '@material-ui/core/Grid'
 
-export const Album = ({ album, excerpt }) => (
+export const Album = ({album}) => (
 
-  <article className={excerpt ? 'album-excerpt' : 'album'}>
-    <h2>{album.title}</h2>
-
-    {excerpt && (
-      <Link to={`/albums/${album.id}`} className="button">
-        View Album
+  <Grid container item xs={12} sm={3} className='item-album' spacing={1}>
+      <Link to={`/albums/${album.id}`}>
+          <h2>{album.title}</h2>
       </Link>
-    )}
-  </article>
+  </Grid>
 
 )
