@@ -26,9 +26,9 @@ const AlbumsPage = ({ dispatch, loading, albums, hasErrors }) => {
 }
 
 const mapStateToProps = state => ({
-  loading: state.posts.loading,
-  albums: state.posts.posts,
-  hasErrors: state.posts.hasErrors,
+  loading: state.albums.loading,
+  albums: state.albums.albums,
+  hasErrors: state.albums.hasErrors,
 })
 
 export default connect(mapStateToProps)(AlbumsPage)

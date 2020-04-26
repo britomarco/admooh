@@ -4,7 +4,7 @@ import albumsReducer from './albumsReducer'
 import albumReducer from './albumReducer'
 
 const rootReducer = combineReducers({
-  posts: albumsReducer,
+  albums: albumsReducer,
   post: albumReducer,
 })
 
